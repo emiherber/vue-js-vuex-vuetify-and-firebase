@@ -1,5 +1,5 @@
-# meal-prep
-
+# meal-prep Tutorial
+https://medium.freecodecamp.org/how-to-build-a-single-page-application-using-vue-js-vuex-vuetify-and-firebase-838b40721a07
 ## Project setup
 ```
 npm install
