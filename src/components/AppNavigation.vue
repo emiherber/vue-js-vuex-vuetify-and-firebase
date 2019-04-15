@@ -53,3 +53,11 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+a {
+  color: white;
+  text-decoration: none;
+}
+</style>
+
