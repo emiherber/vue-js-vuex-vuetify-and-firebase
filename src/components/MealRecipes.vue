@@ -6,7 +6,6 @@
           <v-responsive>
             <v-img :src="item.recipe.image"></v-img>
           </v-responsive>
-
           <v-card-text>
             <div class="title">{{ item.recipe.label }}</div>
 
@@ -20,6 +19,9 @@
               </li>
             </ul>
           </v-card-text>
+          <v-card-actions>
+            <v-btn color="green" dark @click="orderRecipe(item)">Order</v-btn>
+          </v-card-actions>
         </v-card>
       </v-flex>
     </v-layout>
@@ -32,6 +34,18 @@ export default {
   computed: {
     recipes() {
       return this.$store.state.recipes;
+    },
+    isAuthenticated() {
+      return this.$store.getters.isAuthenticated;
+    }
+  },
+  methods: {
+    orderRecipe(item) {
+      if (this.isAuthenticated) {
+        this.$store.dispatch("addRecipe", item);
+      } else {
+        this.$router.push("/sign-in");
+      }
     }
   }
 };
